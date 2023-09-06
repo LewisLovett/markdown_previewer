@@ -1,0 +1,15 @@
+.toolbar{
+
+    background-color: #4aa3a3;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px;
+    align-items: center;
+
+    &__title{
+        display: inline;
+        margin-left: 5px;
+    }
+}
