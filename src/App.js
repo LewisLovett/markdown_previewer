@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import EditorWrapper from './container/EditorWrapper/EditorWrapper';
 import PreviewWrapper from './container/PreviewWrapper/PreviewWrapper';
@@ -51,10 +51,16 @@ function App() {
   ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
   `)
 
+  const [previewText, setPreviewText] = useState(editorText)
+  useEffect(() => {
+    setPreviewText(editorText);
+  }
+  ,[editorText])
+
   return (
     <div className="App">
-      <EditorWrapper textAreaContent={editorText}/>
-      <PreviewWrapper/>
+      <EditorWrapper textAreaContent={editorText} setEditorText={setEditorText}/>
+      <PreviewWrapper content={previewText}/>
     </div>
   );
 }

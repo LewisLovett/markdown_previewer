@@ -1,15 +1,15 @@
 import ToolBar from "../../components/ToolBar/ToolBar";
 import './PreviewWrapper.scss'
 
-export default function PreviewWrapper(textAreaContent){
+export default function PreviewWrapper({content}){
 
 
     return(
         <div className="previewWrapper">
             <ToolBar title={"Previewer"} />
-            <textarea className="previewWrapper__textBox" id="preview">
-                {textAreaContent}
-            </textarea>
+            <div className="previewWrapper__content" id="preview">
+                {content}
+            </div>
         </div>
     )
 }
