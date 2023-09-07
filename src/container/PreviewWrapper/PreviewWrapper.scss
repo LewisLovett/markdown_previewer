@@ -1,0 +1,14 @@
+.previewWrapper{
+    max-width: 800px;
+    margin: 1rem auto;
+    box-shadow: 1px 1px 10px 2px black;
+
+    &__textBox{
+        resize: vertical;
+        width: 100%;
+        min-height: 200px;
+        background-color: #c0d8d8;
+        outline: none;
+       
+    }
+}
