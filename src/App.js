@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 import EditorWrapper from './container/EditorWrapper/EditorWrapper';
 import PreviewWrapper from './container/PreviewWrapper/PreviewWrapper';
+import { marked } from 'marked'
 
 function App() {
-
+  
   const [editorText, setEditorText] = useState(`# Welcome to my React Markdown Previewer!
 
   ## This is a sub-heading...
@@ -51,9 +52,11 @@ function App() {
   ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
   `)
 
-  const [previewText, setPreviewText] = useState(editorText)
+  const [previewText, setPreviewText] = useState(marked.parse(editorText));
   useEffect(() => {
-    setPreviewText(editorText);
+    
+    setPreviewText(marked.parse(editorText));
+    
   }
   ,[editorText])
 
